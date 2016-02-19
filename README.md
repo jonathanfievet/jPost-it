@@ -4,8 +4,8 @@
 
 ### Simple, usefull and easy to set up
 
-Sticky notes have always been convenient. jPost-it allows you to create floating sticky notes into a div and synchronizes them with a database using ajax. You only have to complete the file which receive requests in order to save the datas.
-jPost-its are editable, draggable, resizable and they have 4 colors (yellow, green, purple and blue) that you can simply change anytime. All these actions will be considered as an update so you will be able to save these informations.
+Sticky notes have always been convenient. jPost-it allows you to __create floating sticky notes into a div and synchronizes them with a database using ajax__. You only have to complete the file which receive requests in order to save the datas.
+jPost-its are __editable__, __draggable__, __resizable__ and they have __4 colors__ (yellow, green, purple and blue) that you can simply change anytime. All these actions will be considered as an update so you will be able to save these informations.
 
 ## Set Up
 
