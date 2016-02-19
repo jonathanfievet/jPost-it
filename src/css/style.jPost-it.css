@@ -1,0 +1,99 @@
+
+.post-it {
+  font-family: monospace;
+  position: absolute !important;
+  width: 160px;
+  z-index: 900;
+  box-shadow: -2px 2px 5px #555;
+  overflow: hidden;
+}
+
+.post-it .header {
+  text-align: right;
+  padding: 2px;
+}
+
+.post-it.yellow {
+  background-color: #FEF1B5;
+}
+.post-it.yellow .header {
+  background-color: #FEE5AC;
+}
+.post-it.yellow .header:hover {
+  background-color: #FFFACD;
+}
+
+.post-it.blue {
+  background-color: #D3EEF9;
+}
+.post-it.blue .header {
+  background-color: #C9ECF8;
+}
+.post-it.blue .header:hover {
+  background-color: #DEF1FA;
+}
+
+.post-it.purple {
+  background-color: #DDD8FE;
+}
+.post-it.purple .header {
+  background-color: #D4CDF3;
+}
+.post-it.purple .header:hover {
+  background-color: #EBE8FF;
+}
+
+.post-it.green {
+  background-color: #D0FDCA;
+}
+.post-it.green .header {
+  background-color: #C5F7C1;
+}
+.post-it.green .header:hover {
+  background-color: #DCFADA;
+}
+
+.post-it .content_post_it {
+  padding: 5px;
+  min-height: 70px;
+  outline: none;
+}
+
+.ui-resizable-e {
+  right:0px;
+}
+
+.box {
+  width:10px;
+  height:10px;
+  display:inline-block;
+  border-radius:2px;
+  cursor:pointer;
+  color: #603311;
+  font-weight: bold;
+}
+.box.purple {
+  background-color: #7b6bc2;
+}
+.box.blue {
+  background-color: #4f9eb8;
+}
+.box.green {
+  background-color: #68c75f;
+}
+.box.yellow {
+  background-color: #DAD763;
+}
+.delete {
+  width:10px;
+  height:10px;
+  display:inline-block;
+  border-radius:2px;
+  cursor:pointer;
+  color: #603311;
+  font-weight: bold;
+  margin-right: 5px;
+}
+.delete:hover {
+  color: #D19275;
+}

@@ -1,0 +1,16 @@
+{
+	"name": "jPost-it",
+	"version": "1.0",
+	"description": "A simple and usefull Post-it plugin for jQuery.",
+	"authors": [
+		"Jonathan Fievet <jonathan.fievetm@gmail.com>"
+	],
+	"main": "src/jquery.boilerplate.js",
+	"keywords": [
+		"jquery",
+		"plugin",
+		"post-it",
+		"jquery plugin post-it",
+	],
+	"license": "WTFPL"
+}
