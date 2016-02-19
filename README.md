@@ -9,17 +9,17 @@ jPost-its are editable, draggable, resizable and they have 4 colors (yellow, gre
 
 1. Include jQuery & jQuery-ui:
 
-```html
+	```html
 	<script src="../dist/jquery/jquery.min.js"></script>
 	<script src="../dist/jquery-ui/jquery-ui.min.js"></script>
-```
+	```
 
 2. Include plugin's code and CSS file:
 
-```html
+	```html
 	<script src="../dist/jquery.jPost-it.js"></script>
 	<link rel="stylesheet" href="../dist/style.jPost-it.css">
-```
+	```
 
 ## Usage
 
