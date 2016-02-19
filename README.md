@@ -34,7 +34,7 @@ jPost-its are editable, draggable, resizable and they have 4 colors (yellow, gre
 		}
 	});
 	```
-	You can also choose the same file for these 3 actions. Indeed, the ajax request will receive the content, the color, the top 	position, the left position, the id (if it is an update or delete) and the action. With the action, you will be able to handle the request in a different way on a same file.
+	You can also choose the same file for these 3 actions. Indeed, the ajax request will receive the content, the color, the top position, the left position, the width, the id (if it is an update or delete) and the action. With the action, you will be able to handle the request in a different way on a same file.
 
 2. Define the element which will create your jPost-its (like a button for example) :
 
@@ -58,6 +58,26 @@ You can choose the default position, color (between yellow, green, purple and bl
 		});
 	});
 ```
+
+## Event
+
+When a jPost-it is created, updated or deleted, it creates an event. You have the power to execute instructions when one of these action is done.
+
+```javascript
+	// On create
+	$("#board").on("jPostItcreated", function(event, datas) {
+		// some logic
+	});
+	// On update
+	$("#board").on("jPostItupdated", function(event, datas) {
+		// some logic
+	});
+	// On delete
+	$("#board").on("jPostItdeleted", function(event, datas) {
+		// some logic
+	});
+```
+The event have data which contains the id, color, width, content, top position and left position of the jPost-it.
 
 Created by [Jonathan Fievet](https://github.com/jonathanfievet). 
 Based on the concept of [Laura Mead](https://github.com/shmeadyy) : [board.html](https://gist.github.com/shmeadyy/7324662)
