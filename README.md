@@ -34,7 +34,7 @@ $("#container").jPostIt({
 	}
 });
 ```
-You can also choose the same file for these 3 actions. Indeed, the ajax request will receive the content, the color, the top position, the left position, the id (if it is an update or delete) and the action. With the action, you will be able to handle the request in a different way on a same file.
+	You can also choose the same file for these 3 actions. Indeed, the ajax request will receive the content, the color, the top position, the left position, the id (if it is an update or delete) and the action. With the action, you will be able to handle the request in a different way on a same file.
 
 2. Define the element which will create your jPost-its (like a button for example) :
 
