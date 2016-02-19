@@ -1,5 +1,7 @@
 # jPost-it Plugin jQuery
 
+![](http://img15.hostingpics.net/pics/503718jPostit.png "jPost-it Plugin jQuery")
+
 ### Simple, usefull and easy to set up
 
 Sticky notes have always been convenient. jPost-it allows you to create floating sticky notes into a div and synchronizes them with a database using ajax. You only have to complete the file which receive requests in order to save the datas.
@@ -79,5 +81,5 @@ When a jPost-it is created, updated or deleted, it creates an event. You have th
 ```
 The event have data which contains the id, color, width, content, top position and left position of the jPost-it.
 
-Created by [Jonathan Fievet](https://github.com/jonathanfievet). 
+> Created by [Jonathan Fievet](https://github.com/jonathanfievet). 
 Based on the concept of [Laura Mead](https://github.com/shmeadyy) : [board.html](https://gist.github.com/shmeadyy/7324662)
