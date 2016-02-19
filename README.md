@@ -25,38 +25,38 @@ jPost-its are editable, draggable, resizable and they have 4 colors (yellow, gre
 
 1. Define the container. The following lines are the files which will receive your request ajax when a jPost-it will be created, updated or deleted :
 
-```javascript
-$("#container").jPostIt({
-	"url" : {
-		"create": "./createInDatabase.php",
-		"update": "./updateInDatabase.php",
-		"delete": "./deleteInDatabase.php"
-	}
-});
-```
-	You can also choose the same file for these 3 actions. Indeed, the ajax request will receive the content, the color, the top position, the left position, the id (if it is an update or delete) and the action. With the action, you will be able to handle the request in a different way on a same file.
+	```javascript
+	$("#container").jPostIt({
+		"url" : {
+			"create": "./createInDatabase.php",
+			"update": "./updateInDatabase.php",
+			"delete": "./deleteInDatabase.php"
+		}
+	});
+	```
+	You can also choose the same file for these 3 actions. Indeed, the ajax request will receive the content, the color, the top 	position, the left position, the id (if it is an update or delete) and the action. With the action, you will be able to handle the request in a different way on a same file.
 
 2. Define the element which will create your jPost-its (like a button for example) :
 
-```javascript
-$('#yourElement').click(function() {
-	$("#container").jPostIt("create");
-});
-```
+	```javascript
+	$('#yourElement').click(function() {
+		$("#container").jPostIt("create");
+	});
+	```
 
 ## Full options usage
 
 You can choose the default position, color (between yellow, green, purple and blue) and content. Of course, these informations are simply editable.
 
 ```javascript
-$('#yourElement').click(function() {
-	$("#container").jPostIt("create", {
-		"content": "your custom content",
-		"color": "green",
-		"top": 200,
-		"left": 500
+	$('#yourElement').click(function() {
+		$("#container").jPostIt("create", {
+			"content": "your custom content",
+			"color": "green",
+			"top": 200,
+			"left": 500
+		});
 	});
-});
 ```
 
 Created by [Jonathan Fievet](https://github.com/jonathanfievet). 
