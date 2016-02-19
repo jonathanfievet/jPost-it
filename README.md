@@ -58,7 +58,5 @@ You can choose the default position, color (between yellow, green, purple and bl
 		});
 	});
 	```
-
-
 Created by Jonathan Fievet 
 Based on the concept of [Laura Mead](https://github.com/shmeadyy) : [board.html](https://gist.github.com/shmeadyy/7324662)
