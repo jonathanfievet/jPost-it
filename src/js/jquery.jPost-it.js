@@ -1,14 +1,13 @@
 /**!
  * jPost-it 1.0
- * LIEN GITHUB
+ * https://github.com/jonathanfievet/jPost-it
  *
  * Use jQuery & jQuery-ui
  * http://jquery.com/
  * http://jqueryui.com/
  *
- * Copyright 2016 Jonathan Fievet
- * Released under the MIT license
- * LIEN PROFIL
+ * Created by Jonathan Fievet 2016
+ * https://github.com/jonathanfievet
  *
  */
 
