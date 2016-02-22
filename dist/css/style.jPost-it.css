@@ -1,4 +1,16 @@
-
+/**!
+ * jPost-it 1.0
+ * https://github.com/jonathanfievet/jPost-it
+ *
+ * Use jQuery & jQuery-ui
+ * http://jquery.com/
+ * http://jqueryui.com/
+ *
+ * Created by Jonathan Fievet 2016
+ * https://github.com/jonathanfievet
+ *
+ */
+ 
 .post-it {
   font-family: monospace;
   position: absolute !important;
