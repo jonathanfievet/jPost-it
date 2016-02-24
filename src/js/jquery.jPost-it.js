@@ -15,13 +15,18 @@
 
 	"use strict";
 
-		
+
 		var idPostIt, pluginName = "jPostIt";
 
 		function jPostIt (element, config) {
+			var defaultConfirm = {
+				"visible" : false,
+				"content" : "Are you sure ?"
+			};
 			this.element = element;
 			this._name = pluginName;
 			this.config = config;
+			this.config.confirm = $.extend(defaultConfirm, config.confirm);
 			this.init();
 		}
 
@@ -40,11 +45,11 @@
 			      stop: function() {
 			        object.save(
 						$(this).attr('id'),
-				        $(this).find('.content_post_it').html(), 
+				        $(this).find('.content_post_it').html(),
 				        $(this).data('color'),
 				        $(this).css('width'),
-				        $(this).offset().left, 
-				        $(this).offset().top   
+				        $(this).offset().left,
+				        $(this).offset().top
 			        );
 			      }
 			    });
@@ -54,11 +59,11 @@
 			      stop: function() {
 			        object.save(
 						$(this).attr('id'),
-				        $(this).find('.content_post_it').html(), 
+				        $(this).find('.content_post_it').html(),
 				        $(this).data('color'),
 				        $(this).css('width'),
-				        $(this).offset().left, 
-				        $(this).offset().top   
+				        $(this).offset().left,
+				        $(this).offset().top
 			        );
 			      }
 			    });
@@ -84,7 +89,7 @@
 			        $(this).parent().parent().data("color", $(this).data("color"));
           			object.save(
 						$(this).parent().parent().attr('id'),
-						$(this).parent().parent().find(".content_post_it").html(), 
+						$(this).parent().parent().find(".content_post_it").html(),
 						$(this).parent().parent().data('color'),
 						$(this).parent().parent().css('width'),
 						$(this).parent().parent().offset().left,
@@ -96,7 +101,7 @@
 		        $(contentPostIt).click(function(e) {
 		        	e.stopPropagation();
 		        });
-					
+
 			},
 			create: function(options) {
 
@@ -118,12 +123,12 @@
 			          $(object.element).append('<div class="post-it ' + options.color + '" data-color="' + options.color + '" id="'+ idPostIt +'"><div class="header"><div class="box yellow" data-color="yellow"></div> <div class="box green" data-color="green"></div> <div class="box blue" data-color="blue"></div> <div class="box purple" data-color="purple"></div> <div class="delete">X</div></div><div contenteditable="true" class="content_post_it">' + options.content +'</div></div>');
 
 				      $("#" + idPostIt).css({
-				        'top': options.top, 
+				        'top': options.top,
 				        'left': options.left
 				      });
 				      object.init();
 
-				      $(object.element).trigger("jPostItcreated", { 
+				      $(object.element).trigger("jPostItcreated", {
 				      	"id": object_id,
 				      	"action" : "create",
 				      	"content": $("#"+ object_id).find('.content_post_it').html(),
@@ -155,7 +160,7 @@
 			        success : function(object_id, statut) {
 			          $("#" + id).removeClass("saving");
 
-			          $(object.element).trigger("jPostItupdated", { 
+			          $(object.element).trigger("jPostItupdated", {
 			          	"id": object_id,
 			          	"action": "update",
 				      	"content": $("#"+ object_id).find('.content_post_it').html(),
@@ -168,29 +173,32 @@
 			    });
 			},
 			destroy : function(id) {
+
 				var attributes = {
 					"id": id,
 					"action": "delete"
 				},
 				object = this;
 
-				$.ajax({
-			        url: object.config.url.delete,
-			        type: 'POST',
-			        data: attributes,
-			        success : function(object_id, statut) {
-			          $(object.element).trigger("jPostItdeleted", { 
-			          	"id": object_id,
-			          	"action": "delete",
-				      	"content": $("#"+ object_id).find('.content_post_it').html(),
-				      	"color": $("#"+ object_id).data('color'),
-				      	"width": $("#"+ object_id).css('width'),
-				      	"top": $("#"+ object_id).offset().top,
-				      	"left": $("#"+ object_id).offset().left
-			          });
-			          $("#" + id).remove();
-			        }
-			    });
+				if (!this.config.confirm.visible || confirm(this.config.confirm.content)) {
+					$.ajax({
+							url: object.config.url.delete,
+							type: 'POST',
+							data: attributes,
+							success : function(object_id, statut) {
+								$(object.element).trigger("jPostItdeleted", {
+									"id": object_id,
+									"action": "delete",
+									"content": $("#"+ object_id).find('.content_post_it').html(),
+									"color": $("#"+ object_id).data('color'),
+									"width": $("#"+ object_id).css('width'),
+									"top": $("#"+ object_id).offset().top,
+									"left": $("#"+ object_id).offset().left
+								});
+								$("#" + id).remove();
+							}
+					});
+				}
 			}
 		});
 
@@ -198,7 +206,7 @@
 		// preventing against multiple instantiations
 		$.fn[ pluginName ] = function ( method_name, options ) {
 			return this.each(function() {
-				// target.data(key, value) regroupe les éléments de jQuery 
+				// target.data(key, value) regroupe les éléments de jQuery
 				if ( !$(this).data("plugin_" + pluginName ) ) {
 						var config = method_name;
 						$(this).data("plugin_" + pluginName, new jPostIt( this, config) );

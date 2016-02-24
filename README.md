@@ -61,6 +61,23 @@ You can choose the default position, color (between yellow, green, purple and bl
 	});
 ```
 
+You also have the posibility to add a custom dialog box to confirm your choice when you want to delete a jPost-it.
+
+```javascript
+	$("#container").jPostIt({
+		"url" : {
+			"create": "./createInDatabase.php",
+			"update": "./updateInDatabase.php",
+			"delete": "./deleteInDatabase.php"
+		},
+		// Dialog box options
+		"confirm" : {
+			"visible" : true,
+			"content" : "your custom question"
+		}
+	});
+```
+
 ## Event
 
 When a jPost-it is created, updated or deleted, it creates an event. You have the power to execute instructions when one of these action is done.
@@ -81,5 +98,5 @@ When a jPost-it is created, updated or deleted, it creates an event. You have th
 ```
 The event have data which contains the id, color, width, content, top position and left position of the jPost-it.
 
-> Created by [Jonathan Fievet](https://github.com/jonathanfievet). 
+> Created by [Jonathan Fievet](https://github.com/jonathanfievet).
 Based on the concept of [Laura Mead](https://github.com/shmeadyy) : [board.html](https://gist.github.com/shmeadyy/7324662)

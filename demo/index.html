@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>jQuery Boilerplate</title>
+		<title>jPost-it demo</title>
 		<!-- Required Files -->
 		<script src="../dist/jquery/jquery.min.js"></script>
 		<script src="../dist/jquery-ui/jquery-ui.min.js"></script>
@@ -35,10 +35,10 @@
 			<div id="text-log"></div>
 			<div class="post-it yellow" data-color="yellow" id="1" style="top:50px; left:400px">
 				<div class="header">
-					<div class="box yellow" data-color="yellow"></div> 
-					<div class="box green" data-color="green"></div> 
-					<div class="box blue" data-color="blue"></div> 
-					<div class="box purple" data-color="purple"></div> 
+					<div class="box yellow" data-color="yellow"></div>
+					<div class="box green" data-color="green"></div>
+					<div class="box blue" data-color="blue"></div>
+					<div class="box purple" data-color="purple"></div>
 					<div class="delete">X</div>
 				</div>
 				<div contenteditable="true" class="content_post_it">
@@ -49,14 +49,21 @@
 		<button id="newPostIt">New Post-it</button>
 		<script>
 			$(function() {
+
+				// Initialisation of the container with full options
 				$("#board").jPostIt({
 					"url" : {
 						"create": "./demoAjax.php",
 						"update": "./demoAjax.php",
 						"delete": "./demoAjax.php"
+					},
+					"confirm" : {
+						"visible" : true,
+						"content" : "Do you really want to delete it ?"
 					}
 				});
 
+				// Initialisation of the button with full options
 				$('#newPostIt').click(function() {
 					$("#board").jPostIt("create", {
 						"content": "A wild post-it appear !",
@@ -66,6 +73,7 @@
 					});
 				});
 
+				// Events
 				$("#board").on("jPostItcreated", function(event, datas) {
 					$("#text-log").html("action => " + datas.action + " <br/>id => " + datas.id + "<br/>color => " + datas.color + " <br/>width => " + datas.width + "<br/>poxY => " + datas.top + "<br/>posX => " + datas.left +"<br/>content => " + datas.content);
 				});
