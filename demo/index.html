@@ -33,6 +33,7 @@
 	<body>
 		<div id="board">
 			<div id="text-log"></div>
+			<!-- jPost-it code -->
 			<div class="post-it yellow" data-color="yellow" id="1" style="top:50px; left:400px">
 				<div class="header">
 					<div class="box yellow" data-color="yellow"></div>
@@ -45,6 +46,7 @@
 					Hello !<br /><br />Welcome to the jPost-it plugin demo :)
 				</div>
 			</div>
+			<!-- End code -->
 		</div>
 		<button id="newPostIt">New Post-it</button>
 		<script>
@@ -68,8 +70,8 @@
 					$("#board").jPostIt("create", {
 						"content": "A wild post-it appear !",
 						"color": "green",
-						"top": 200,
-						"left": 500
+						"top": parseInt(Math.random() * 300),
+						"left": parseInt(Math.random() * 300)
 					});
 				});
 
